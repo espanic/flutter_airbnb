@@ -7,10 +7,13 @@ import 'package:flutter_airbnb/styles.dart';
 class HomeHeaderForm extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
     return Padding(
       padding: const EdgeInsets.only(top: gap_m),
       child: Align(
-        alignment: Alignment(-0.6, 0), //-1.0 ~ 1.0의 범위 (가로 세로)
+        alignment: screenWidth < 520
+            ? Alignment(0, 0)
+            : Alignment(-0.6, 0), //-1.0 ~ 1.0의 범위 (가로 세로)
         child: Container(
           width: 420,
           decoration: BoxDecoration(
